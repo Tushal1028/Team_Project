@@ -1,0 +1,116 @@
+.profile-container {
+    background-color: #1a1b44;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  .profile-card {
+    display: flex;
+    background-color: #1a1b44;
+    padding: 20px;
+    border-radius: 8px;
+    
+    width: 100vw;
+  }
+  
+  .profile-left {
+    text-align: center;
+    flex: 1;
+  }
+  
+  .avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #00ffb9;
+  }
+  
+  .avatar img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .profile-name {
+    color: #3536b4;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .subscription-status {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .close-button {
+    background-color: #a030ea;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .divider {
+    width: 2px;
+    background-color: #444575;
+    margin: 0 20px;
+  }
+  
+  .profile-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    
+  }
+  .profile-title {
+    color: #3536b4;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .details-title {
+    color: white;
+  }
+  
+  .profile-details p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+
+  
+  .icon {
+    font-size: 2rem;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  .google-logo2 {
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    margin-top: 30px;
+  }
+  .setting-logo {
+    position: absolute;
+    top: 10px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    width: 50px; /* Example width */
+    height: auto; /* Maintain aspect ratio */
+  }

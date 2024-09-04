@@ -1,0 +1,126 @@
+.body-sign {
+    margin: 0;
+    padding: 0;
+     background-color: #333; 
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .login-container {
+    background-color: black;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 40px;
+    text-align: center;
+    position: relative;
+    width: 1150px;
+    height: 480px;
+  }
+  
+  .chair-image {
+    margin-top: 30px;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    rotate: 50deg;
+    top:210px;
+    left: calc(15% - 0px);
+  }
+  .chair-image-signin {
+    margin-top: 30px;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    rotate: 320deg;
+    top: -50px;
+    left: calc(15% - 0px);
+  }
+  
+  .h2 {
+    margin-top: 50px;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-style: serif;
+  }
+  
+  .input-field {
+    display: block;
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-left: 350px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+  }
+  
+  .create-account {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .create-account a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .submit-btn {
+    display: block;
+    width: 150px;
+    padding: 10px;
+    margin-left: 500px;
+    background-color:black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 1s;
+    height: 40px;
+  }
+  .submit-btn:hover{
+    font-size: 12px;
+    width: 150px;
+    padding: 10px;
+    
+  }
+  
+  .google-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    width: 400px;
+    padding: 10px;
+    background-color:black;
+    color: white;
+    border-radius: 5px;
+    border: 2px solid white;
+    font-style: bold;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 35px;
+    margin-left: 400px;
+  }
+  
+
+  .google-icon {
+    margin-right: 10px; /* Space between the icon and text */
+    width: 25px;
+  }
+  
+  .google-text {
+     flex-grow: 1; /* This makes the text take up the remaining space */
+    /* text-align: center; */  /* Centers the text */
+    font-size: 22px;
+  }
+  

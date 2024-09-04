@@ -1,0 +1,229 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app-container-edit {
+  display: flex;
+  height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar-edit {
+  width: 20%;
+  background-color: #1A1B27;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar-hidden-edit {
+  width: 0;
+  overflow: hidden;
+}
+
+.sidebar-header-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-edit {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4a90e2;
+  margin-bottom: 10px;
+}
+
+.search-box-edit {
+  width: 80%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.sidebar-content-edit {
+  flex: 1;
+  overflow-y: auto; /* Scroll bar for the sidebar */
+  padding-right: 5px; /* Adjust for scroll bar */
+}
+
+.sidebar-row-edit {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sidebar-item-edit {
+  background-color: white; /* White background for placing images */
+  border-radius: 8px;
+  width: 45%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-item-edit img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+.sidebar-toggle-container-edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1A1B27;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  
+  margin-right: 10px; /* Space between sidebar and toggle button */
+}
+
+.sidebar-toggle-edit {
+  background-color: #2C2E40;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.main-content-edit {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #0F101B;
+}
+
+.top-bar-edit {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #1A1B27;
+}
+
+.spacer-edit {
+  flex: 1;
+}
+
+.top-buttons-edit {
+  display: flex;
+}
+
+.top-button-edit {
+  background-color: #2C2E40;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  border:1px solid violet;
+  color: violet;
+}
+.top-button-edit:hover{
+  background-color: violet;
+  color: white;
+}
+
+.save-button-edit {
+  background-color: #4a90e2;
+  margin: 5px;
+  border: 1px solid blue;
+  color: blue;
+  transition: 2s;
+}
+
+.close-button-edit {
+  background-color: #a10056;
+  margin: 5px;
+}
+
+.content-display-edit {
+  position: relative;
+  flex: 1;
+  background-color: white;
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden; /* Prevent overflow if images go out of bounds */
+}
+
+.dropped-image-container {
+  position: absolute;
+  cursor: move;
+  z-index: 1;
+}
+
+.dropped-image-container img {
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 8px;
+}
+
+.delete-image-btn {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 2;
+  display: none;
+}
+
+.dropped-image-container:hover .delete-image-btn {
+  display: block;
+}
+
+.chat-box-edit {
+  background-color: #a9b7b8;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.chat-header-edit {
+  background-color: #4a90e2;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  color: white;
+  font-weight: bold;
+}
+
+.chat-content-edit {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto; /* Scroll bar for chat content */
+  background-color: #dfe6e9;
+  border-radius: 0 0 10px 10px;
+}
+
+.chat-message-edit {
+  background-color: #f5f5f5;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.chat-input-container-edit {
+  display: flex;
+}
+
+.chat-input-edit {
+  border: none;
+  padding: 10px;
+  width: calc(100% - 20px);
+  margin: 0 10px 10px 10px;
+  border-radius: 0 0 10px;
+}

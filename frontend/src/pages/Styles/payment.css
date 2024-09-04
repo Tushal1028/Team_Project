@@ -1,0 +1,143 @@
+.App-payment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: #000;
+  width: 90vw;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
+
+.card-info, .personal-info {
+  width: 45%;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 4px 12px white;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  height: 200px;
+  position: relative;
+}
+
+.card-logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20%;
+  height: auto;
+}
+
+.card-number{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pay-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+.cardnumber input {
+  width: 200px;
+  padding: 10px;
+  background-color:white; 
+  color: #333;
+  font-size: 1rem;
+  margin-top: 5px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid black;
+  border-top:none ;
+  border-left: none;
+  border-right: none;
+}
+.cardnumber ::placeholder{
+  font-style: normal;
+  font-weight: bold;
+  color: black;
+}
+.card-details {
+  display: flex;
+  justify-content: space-between;
+}
+.card-details2 input{
+    background-color:white; 
+    color: #333;
+    font-size: 1rem;
+    margin-top: 5px;
+    border-bottom: 2px solid black;
+    border-top:none ;
+    border-left: none;
+    border-right: none;
+    border-radius: none;
+}
+.card-details2 ::placeholder{
+  font-weight: bold;
+  color: black;
+}
+
+
+.inline-input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inline-input input {
+  width: 100%;
+}
+
+.personal-form input {
+  background-color: #000;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 10px;
+  margin-bottom: 15px;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  margin-right: 15px;
+  width: 100%;
+}
+.personal-form ::placeholder{
+  color: white;
+}
+
+.pay-button {
+  background-color: white;
+  color: black;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.pay-button:hover {
+  background-color: #ddd;
+}

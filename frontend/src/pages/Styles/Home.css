@@ -1,0 +1,156 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #181818;
+  color: #ffffff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: black;
+  position: relative;
+  width: 100%;
+}
+
+.profile {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  
+}
+
+.header-buttons {
+  display: flex;
+  margin-right: 40px;
+  margin-top: 10px;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.header-buttons button {
+  margin-bottom: 10px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.sidebar {
+  width: 20%;
+  background-color:black;
+  padding: 20px;
+  height: 100%;
+  border: 1px  solid white;
+}
+
+.projects h4 {
+  margin: 20px 0 10px;
+}
+
+.projects ul {
+  list-style: none;
+  padding: 0;
+}
+
+.projects ul li {
+  padding: 10px;
+  background-color: #333333;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.main-content {
+  width: 80%;
+  padding: 20px;
+  height: 100%;
+  background-color: black;
+}
+
+.buttons {
+  display: flex;
+  gap:105px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.new-design {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.team-design {
+  background-color: #5a5a5a;
+  color: #ffffff;
+}
+
+.template {
+  background-color: #ff7b00;
+  color: #ffffff;
+}
+
+.subscribe-button {
+  background-color: #ff00ff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.logout-button {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.logout-button:hover{
+  background-color: #ff00ff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project {
+  background-color:#333333;
+  padding: 20px;
+  text-align: center;
+}
+
+.project img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Hover effects */
+.buttons button:hover,
+.header-buttons button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}

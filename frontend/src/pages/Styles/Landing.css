@@ -1,0 +1,138 @@
+
+ .container-landing {
+  display: flex;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1A1A2E;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.left {
+  flex: 1;
+  max-width: 50%;
+  padding-right: 20px;
+  margin-left: 25px;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0px;
+  margin-left: 100px;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-left: 15px;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 40px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 15px 30px;
+  font-size: 1em;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-blue {
+  background-color: #1F51FF;
+  border-radius: 30px;
+  border: 1px solid white;
+  transition: 1s; 
+}
+
+.btn-blue:hover {
+  background-color: white;
+  color: black;
+}
+
+.btn-black {
+  background-color: #333;
+  border: 1px solid white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: 1s;
+}
+
+.btn-black:hover {
+  background-color: white;
+  color: black;
+  border-radius: 30px;
+}
+
+
+/* Specific styles for each image */
+.image-column {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+
+/* Specific styles for each image */
+.image1 img {
+  width: 150px;
+  height: 300px;
+  border-radius: 100px;
+  margin-top: 15px; /* Adjust the margin to reduce the gap */
+}
+
+.image2 img {
+  width: 150px;
+  height: 300px;
+  margin-top: -60px; /* Adjust the margin to reduce the gap */
+  border-radius: 100px;
+}
+
+.image3 img {
+  width: 150px;
+  height: 300px;
+  border-radius: 100px;
+  margin-top: 20px; /* Adjust the margin to reduce the gap */
+}
+
+.image4 img {
+  width: 150px;
+  height: 300px;
+  border-radius: 100px;
+  margin-top: 10px; /* Adjust the margin to reduce the gap */
+}
+
+.image5 img {
+  width: 150px;
+  height: 300px;
+  border-radius: 100px;
+  margin-top: 10px; /* Adjust the margin to reduce the gap */
+}
+
+.image6 img {
+  width: 150px;
+  height: 300px;
+  border-radius: 100px;
+  margin-top: 20px; /* Adjust the margin to reduce the gap */
+}

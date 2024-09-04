@@ -1,0 +1,180 @@
+.body-google {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #CDE6FE;
+  position: relative;
+}
+
+.Back-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.signin-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 820px;
+}
+
+.signin-box {
+  padding: 20px;
+}
+
+.google-signin-header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.google-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.container-google {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  
+}
+
+.left-align {
+  flex: 1;
+}
+
+.right-align {
+  flex: 1;
+  padding-left: 10px;
+}
+
+.account-selection {
+  display: block;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.account-text {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.account-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.account-email {
+  font-size: 14px;
+  color: #5f6368;
+  margin: 0;
+}
+
+.another-text {
+  font-size: 16px;
+  margin: 0;
+  color: black;
+}
+
+.use-another-account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.other-account-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.introvert-privacy {
+  font-size: 12px;
+  color: #4c4f52;
+  text-align: center;
+  margin-top: 20px;
+  padding: 0 20px;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+ 
+}
+
+.button {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: white;
+  width: 350px;
+  text-align: center;
+}
+
+.cancel-button {
+  color:#1a73e8;
+}
+
+.continue-button {
+  
+  color:#1a73e8;
+}
+
+.button:hover {
+  background-color: #e8e8e8;
+}
+
+a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.hr-1{
+  background-color: black;
+}
+.hr-2{
+  background-color: black;
+  border-radius: 20px;
+ /*  border: 1.0px solid black; */
+ height: 3px;
+}
+.hr-3{
+  background-color: black;
+  border: 0px solid black;
+}
