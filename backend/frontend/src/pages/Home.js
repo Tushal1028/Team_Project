@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import './Styles/Home.css';
 import img1 from './Images/O1.png';
 import img2 from './Images/O2.png';
 import img3 from './Images/template.png';
-import img4 from './Images/user.png';
 import img5 from './Images/n1.png'
 import img6 from './Images/th.jpeg'
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../content/AuthContext";
+import Toast from "../plugins/Toast";
+
 function Home() {
     const navigate=useNavigate()
+
+    const {logoutUser, user} = useContext(AuthContext)
     function subscribe(){
         navigate('/subscribe-info')
       }
       function logout(){
+        logoutUser()
+        Toast("success","You have been logged out...")
         navigate('/')
       }
       function edit(){
@@ -24,17 +30,18 @@ function Home() {
   return (
     <div className="app">
       <header className="header">
-        <div className="profile">
-          <img src={img4} alt="Profile" className="profile-image" onClick={profile}/>
-          <h3 style={{display:'inline',marginLeft:'10px'}}>First Name</h3>
+        <div className="profile" onClick={profile}>
+          <img src={user.image} alt="Profile" className="profile-image" />
+          <h3 style={{display:'inline',marginLeft:'10px'}}>{ user.username }</h3>
         </div>
         <div className="header-buttons">
-          <button className="subscribe-button" onClick={subscribe}>Subscribe</button>
+          {user.subscribed ? (<></>) : (<button className="subscribe-button" onClick={subscribe}>Subscribe</button>)}
           <button className="logout-button" onClick={logout}>Log out</button>
         </div>
       </header>
       <hr></hr>
       <div className="content-wrapper">
+        {/* {JSON.stringify(user)} */}
         <aside className="sidebar">
           <div className="projects">
           <h2 style={{backgroundColor:'white',color:'black'}}>Project Names
