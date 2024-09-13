@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Styles/payment.css";
 import img from './Images/Visa-Logo-PNG7.png';
+import AuthContext from "../content/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 function PaymentMethod() {
+  const navigate=useNavigate()
+
   const [cardDetails, setCardDetails] = useState({
     cardNumber: "",
     monthYear: "",
@@ -35,9 +39,12 @@ function PaymentMethod() {
     });
   };
 
-  const handlePay = () => {
-    alert("Payment Submitted!");
-    // Here you can handle the form submission logic
+  const { updateSubscribe } = useContext(AuthContext)
+
+  const handlePay = async () => {
+    navigate('/home')
+    await updateSubscribe()
+    
   };
 
   return (
