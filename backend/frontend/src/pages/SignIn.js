@@ -4,6 +4,7 @@ import img1 from './Images/chire.png';
 import img2 from './Images/Google.png';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../content/AuthContext';
+import Toast from '../plugins/Toast';
 
 function SignIn() {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ function SignIn() {
       navigate('/home')
     } else {
       // Handle empty email or password (optional)
-      console.log("Email or password is empty");
+      Toast("error","Email or password is empty","top");
     }
     
     // console.log(email, password);
@@ -46,7 +47,7 @@ function SignIn() {
           <input type="password" name='password' placeholder="Enter Password" className="input-field"/>
           <div className="create-account">
             <span>Don't Have an Account?</span>
-            <a href="#1" onClick={createone}>Create One</a>
+            <a href="" onClick={createone}>Create One</a>
           </div>
           <button type="submit" className="submit-btn">Submit</button>
         </form>

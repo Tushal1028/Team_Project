@@ -113,4 +113,5 @@
     right: 20px; /* Distance from the right */
     width: 50px; /* Example width */
     height: auto; /* Maintain aspect ratio */
+    cursor: pointer;
   }

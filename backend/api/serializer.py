@@ -41,13 +41,15 @@ class RegisterSerializer(serializers.ModelSerializer):
             return attrs
         
         def create(self, validated_data):
-            user = models.User.objects.create_user(
-                username=validated_data['username'],
-                email=validated_data['email'],
-            )
-            user.set_password(validated_data['password'])
-            user.save()
-
+            try:
+                user = models.User.objects.create_user(
+                    username=validated_data['username'],
+                    email=validated_data['email'],
+                )
+                user.set_password(validated_data['password'])
+                user.save()
+            except NameError as e:
+                print('error: ',e)
             return user
 
 class ProfileUpdateSerializer(serializers.ModelSerializer):
