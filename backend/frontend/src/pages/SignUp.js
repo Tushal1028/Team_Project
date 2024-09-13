@@ -4,6 +4,7 @@ import img1 from './Images/chire.png';
 import img2 from './Images/Google.png';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../content/AuthContext';
+import Toast from '../plugins/Toast';
 
 function SignUp() {
   const navigate = useNavigate();
@@ -26,9 +27,8 @@ function SignUp() {
     // Check if email, password and username are defined and not empty
     if (username && username.length > 0 && email && email.length > 0 && password && password2 && password.length > 0) {
       registerUser(email, username, password, password2);
-      navigate('/home')
     } else {
-      console.log("Username, email, or password is empty");
+      Toast("error","Username, email, or password is empty","top");
     }
   }
 
@@ -42,13 +42,13 @@ function SignUp() {
         <img src={img1} alt="Chair" className="chair-image" />
         <h2 className='h2'>Sign Up</h2>
         <form onSubmit={submit}>
-          <input type="text" name="uname" placeholder="Enter User Name" className="input-field" required />
-          <input type="email" name="email" placeholder="Enter Email" className="input-field" required />
-          <input type="password" name="password" placeholder="Enter Password" className="input-field" required />
-          <input type="password" name="password2" placeholder="Confirm Password" className="input-field" required />
+          <input type="text" name="uname" placeholder="Enter User Name" className="input-field"   />
+          <input type="email" name="email" placeholder="Enter Email" className="input-field"   />
+          <input type="password" name="password" placeholder="Enter Password" className="input-field"   />
+          <input type="password" name="password2" placeholder="Confirm Password" className="input-field"   />
           <div className="create-account">
             <span>I Have Account!</span>
-            <a href="#1" onClick={createone}> Log In</a>
+            <a href="" onClick={createone}> Log In</a>
           </div>
           <button type="submit" className="submit-btn">Submit</button>
         </form>
