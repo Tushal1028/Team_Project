@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
             })
         });
         const data = await response.json();
-    
+
         if (response.status === 201) {
             Toast("success", "Registration Successful");
             navigate('/home');
