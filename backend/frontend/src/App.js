@@ -13,6 +13,7 @@ import Home from './pages/Home';
 import PaymentMethod from './pages/PaymentMethod';
 import SubscribeInfo from './pages/SubscribeInfo';
 import AuthContext from './content/AuthContext';
+import FabricDemo from './pages/FabricDemo';
 
 function App() {
   const { user } = useContext(AuthContext);  // Access the user from AuthContext
@@ -26,6 +27,7 @@ function App() {
           <Route path="/signup" element={!user ? <SignUp /> : <Navigate to="/home" />} />
           <Route path="/continue-with-google-1" element={<ContinueWithGoogle1 />} />
           <Route path="/continue-with-google-2" element={<ContinueWithGoogle2 />} />
+          <Route path="/fabricdemo" element={<FabricDemo />} />
           
           {/* Private Routes (only for logged-in users) */}
           <Route path="/home" element={user ? <Home /> : <Navigate to="/signin" />} />
