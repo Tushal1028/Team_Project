@@ -16,8 +16,8 @@ class User(AbstractUser):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    full_name=models.CharField(max_length=300)
-    bio = models.CharField(max_length=300)
+    full_name=models.CharField(max_length=300,default="Enter your full name")
+    bio = models.CharField(max_length=300,default="Enter your bio")
     image = models.ImageField(default="profile_images/default.jpg", upload_to='profile_images/')
     subscribed = models.BooleanField(default=False)
 

@@ -27,13 +27,13 @@ function App() {
           <Route path="/signup" element={!user ? <SignUp /> : <Navigate to="/home" />} />
           <Route path="/continue-with-google-1" element={<ContinueWithGoogle1 />} />
           <Route path="/continue-with-google-2" element={<ContinueWithGoogle2 />} />
-          <Route path="/fabricdemo" element={<FabricDemo />} />
+          {/* <Route path="/fabricdemo" element={<FabricDemo />} /> */}
           
           {/* Private Routes (only for logged-in users) */}
           <Route path="/home" element={user ? <Home /> : <Navigate to="/signin" />} />
           <Route path="/profile" element={user ? <Profile /> : <Navigate to="/signin" />} />
           <Route path="/profileedit" element={user ? <Profileedit /> : <Navigate to="/signin" />} />
-          <Route path="/edit" element={user ? <Edit /> : <Navigate to="/signin" />} />
+          <Route path="/edit" element={user ? <FabricDemo /> : <Navigate to="/signin" />} />
           <Route path="/payment-method" element={user ? <PaymentMethod /> : <Navigate to="/signin" />} />
           <Route path="/subscribe-info" element={user ? <SubscribeInfo /> : <Navigate to="/signin" />} />
 

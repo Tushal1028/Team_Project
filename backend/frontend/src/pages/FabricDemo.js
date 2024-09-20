@@ -2,6 +2,12 @@
     import { Canvas, PencilBrush, Rect, FabricText, Image } from 'fabric';
     import SquareTwoToneIcon from '@mui/icons-material/SquareTwoTone';
     import singleBed from './Images/elements/single-bed.png';
+    import diningTable from './Images/elements/dining-table.png';
+    import dottedLinesforDoor from './Images/elements/dotted-lines-for-door.png';
+    import elevator from './Images/elements/elevator.png';
+    import kitchen from './Images/elements/kitchen.png';
+    import nounlivingroomlayout from './Images/elements/noun-living-room-layout-6581603.png';
+    import stairs from './Images/elements/stairs.png';
 
     const FabricDemo = () => {
         const canvasRef = useRef(null);
@@ -11,6 +17,23 @@
 
         const itemList = [
             { name: 'Single Bed', path: singleBed },
+            {name :"dining Table",path:diningTable},
+            {name :'dottedLinesforDoor',path:dottedLinesforDoor},
+            {name :'elevator',path:elevator},
+            {name :'kitchen',path:kitchen},
+            {name :'nounlivingroomlayout',path:nounlivingroomlayout},
+            {name :'stairs',path:stairs},
+            {name :'stairs',path:stairs},
+            {name :'stairs',path:stairs},
+            {name :'stairs',path:stairs},
+            {name :'stairs',path:stairs},
+            {name :'stairs',path:stairs},
+            {name :'stairs',path:stairs},
+            {name :'stairs',path:stairs},
+            {name :'stairs',path:stairs},
+            {name :'stairs',path:stairs},
+            {name :'stairs',path:stairs},
+            {name :'stairs',path:stairs},
             // Add more objects here from Images>elements
         ];
 
@@ -29,6 +52,8 @@
                 newCanvas.freeDrawingBrush.color = 'black';
                 newCanvas.freeDrawingBrush.width = 5;
 
+                newCanvas.backgroundColor = 'white';
+            
                 const deleteArea = new Rect({
                     left: 0,
                     top: 0,
@@ -141,11 +166,11 @@
                 if (deleteText) canvas.remove(deleteText);
         
                 // Store the original background color
-                const originalBackgroundColor = canvas.backgroundColor;
+                // const originalBackgroundColor = canvas.backgroundColor;
                 // Set the background color to white
-                canvas.backgroundColor = 'white';
-                canvas.renderAll(); // Re-render to apply the background color
-                console.log(JSON.stringify(canvas))
+                // canvas.backgroundColor = 'white';
+                // canvas.renderAll(); // Re-render to apply the background color
+                // console.log(JSON.stringify(canvas))
                 // Generate data URL with the background color
                 const dataURL = canvas.toDataURL({
                     format: 'png',
@@ -153,8 +178,8 @@
                 });
         
                 // Reset the background color to the original
-                canvas.backgroundColor = originalBackgroundColor;
-                canvas.renderAll(); // Re-render to show the original background
+                // canvas.backgroundColor = originalBackgroundColor;
+                // canvas.renderAll(); // Re-render to show the original background
         
                 // Add deleteArea and deleteText back to the canvas
                 if (deleteArea) canvas.add(deleteArea);
@@ -171,18 +196,27 @@
         
 
         return (
-            <>
+            <div style={{display:'flex', height:'100vh',width:'100vw', flexDirection:'column',overflow:'hidden',backgroundColor:'#27272a'}}>
             {console.log(JSON.stringify(canvas))}
-                <div ref={containerRef} className='fabric-canvas' style={{ height: '50vh', width: '100vw' }}>
+            <div>
+                <div ref={containerRef} className='fabric-canvas' style={{ height: '75vh', width: '100vw' }}>
                     <canvas
                         ref={canvasRef}
                         style={{ border: '1px solid #000', display: 'block' }}
                     />
                 </div>
-                <button type='button' onClick={handleDraw}>
+                </div>
+                <div style={{display:'flex' ,gap:'10px',backgroundColor:'#27272a'}}>
+                <button type='button' onClick={handleDraw} style={{backgroundColor:'yellow',fontSize:'16px',fontFamily:'cursive', padding:'4px 8px'}}>
                     {isDrawing ? 'Stop Drawing' : 'Start Drawing'}
                 </button>
-                <button type='button' onClick={addRect}>
+                
+                <button type='button' onClick={downloadCanvas} style={{backgroundColor:'yellow',fontSize:'16px',fontFamily:'cursive', padding:'4px 8px'}}>
+                    Download Canvas
+                </button>
+                </div>
+                <div style={{margin:'10px 0px 0px 5px',display:'flex',gap:'4px',overflow:'scroll',overflowY:'hidden',alignItems:'center'}}>
+                <button type='button' onClick={addRect} style={{width: '100px',height:'110px',padding:'0px 50px', display:'flex',alignItems:'center',justifyContent:'center'}}>
                     <SquareTwoToneIcon />
                 </button>
                 {itemList.map((svg, index) => (
@@ -190,10 +224,9 @@
                         <img src={svg.path} alt={svg.name} style={{ width: '100px', height: '100px' }} />
                     </button>
                 ))}
-                <button type='button' onClick={downloadCanvas}>
-                    Download Canvas
-                </button>
-            </>
+                </div>
+                
+            </div>
         );
     };
 

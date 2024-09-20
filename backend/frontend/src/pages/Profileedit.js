@@ -1,130 +1,139 @@
-import React, { useState } from "react";
-import './Styles/profileedit.css'
+import AuthContext from "../content/AuthContext";
+import "../pages/Styles/profileedit.css";
+import React, { useContext, useState, useEffect } from "react";
+import Toast from "../plugins/Toast";
 import { useNavigate } from "react-router-dom";
-function Profileedit() {
-  const navigate=useNavigate()
-  function close(){
-    navigate('/profile')
-  }
-    const [fullName, setFullName] = useState("");
-    const [email, setEmail] = useState("");
-    const [timezone, setTimezone] = useState("Kolkata");
-    const [language, setLanguage] = useState("English");
-    const [currentPassword, setCurrentPassword] = useState("");
-    const [newPassword, setNewPassword] = useState("");
-    const [retypePassword, setRetypePassword] = useState("");
-  
-    const handleSave = () => {
-      // Handle save functionality
-    };
-  
-    const handleChangePassword = () => {
-      // Handle change password functionality
-    };
-  
-    const handleDeleteAccount = () => {
-      // Handle delete account functionality
-    };
-  
-    return (
-      <div className="account-container">
-        <p style={{marginLeft:'20px',fontSize:'25px',marginBottom:'14px'
-            ,marginTop:'3px'}}>Account</p>
-        <div className="form-row">
+
+
+const ProfileEdit = () => {
+  const navigate = useNavigate();
+  const { user, authTokens, fetchProfileData } = useContext(AuthContext);
+  const [profile, setProfile] = useState({
+    username: "",
+    full_name: "",
+    bio: "",
+    subscribed: false,
+  });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (user) {
+      setProfile({
+        username: user.username,
+        full_name: user.full_name,
+        bio: user.bio,
+        image: user.image,
+        subscribed: user.subscribed,
+      });
+      setLoading(false);
+    }
+  }, [user]);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setProfile({
+      ...profile,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
+
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const username = e.target.elements.username.value;
+    const full_name = e.target.elements.full_name.value;
+    const bio = e.target.elements.bio.value;
+    const subscribed = e.target.elements.subscribed.value;
+
+
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/update-User/", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${authTokens?.access}`,
+        },
+        body: JSON.stringify({
+          username,
+          full_name,
+          bio,
+          subscribed,
+        }),
+      });
+      console.log('r',response)
+      if (response.status === 200) {
+        Toast("success", "Profile updated successfully!");
+        navigate('/')
+      } else {
+        throw new Error("Failed to update profile");
+      }
+    } catch (err) {
+      Toast("error", "Failed to update profile");
+      console.error('e',err)
+    }
+  };
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+
+  return (
+    <div className="profile-edit">
+      <h2>Edit Profile</h2>
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Full Name</label>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-            placeholder="Enter Your Name"
+            id="username"
+            name="username"
+            value={profile.username}
+            onChange={handleChange}
+            required
           />
         </div>
         <div className="form-group">
-          <label>Email Address</label>
+          <label htmlFor="full_name">Full Name</label>
           <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter Your EMail"
+            type="text"
+            id="full_name"
+            name="full_name"
+            value={profile.full_name}
+            onChange={handleChange}
           />
         </div>
-        </div>
-        <div className="form-row">
-          <div className="form-group">
-            <label>TimeZone</label>
-            <input
-              type="text"
-              value={timezone}
-              onChange={(e) => setTimezone(e.target.value)}
-              placeholder="Kolkata"
-            />
-          </div>
-          <div className="form-group">
-            <label>Language</label>
-            <input
-              type="text"
-              value={language}
-              onChange={(e) => setLanguage(e.target.value)}
-              placeholder="English"
-            />
-          </div>
-        </div>
-        <button onClick={handleSave} className="save-button">
-          SAVE
-        </button>
-        <hr style={{marginLeft:'30px',marginRight:'30px'}}/>
-        <h4 style={{marginLeft:'20px'}}>Password</h4>
-        <div className="form-row1">
-        <div className="form-group1">
-          <label>Current password</label>
-          <input
-            type="password"
-            value={currentPassword}
-            onChange={(e) => setCurrentPassword(e.target.value)}
+        <div className="form-group">
+          <label htmlFor="bio">Bio</label>
+          <textarea
+            id="bio"
+            name="bio"
+            value={profile.bio}
+            onChange={handleChange}
           />
         </div>
-        
-          <div className="form-group1">
-            <label>New Password</label>
-            <input
-              type="password"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
-            />
-          </div>
-          <div className="form-group1">
-            <label>ReType password</label>
-            <input
-              type="password"
-              value={retypePassword}
-              onChange={(e) => setRetypePassword(e.target.value)}
-            />
-          </div>
+        <div className="form-group">
+          <label htmlFor="image">Profile Image</label>
         </div>
-
-        <button onClick={handleChangePassword} className="change-password-button">
-          Change Password
-        </button>
-        <h5 style={{marginLeft:'20px',marginTop:'5px'}}>Delete Account</h5>
-        <div className="delete-warning">
-          <p>
-            If you delete your account, your personal information will be wiped
-            from IntroVert's servers, all of your course activity will be
-            anonymized and any certificates earned will be deleted. 
-            This action
-            cannot be undone! Cancel any active subscriptions before you delete
-            your account.
-          </p>
+        <div className="form-group">
+          <label htmlFor="subscribed">
+            <input
+              type="checkbox"
+              id="subscribed"
+              name="subscribed"
+              checked={profile.subscribed}
+              onChange={handleChange}
+            />
+            Subscribed to newsletter
+          </label>
         </div>
-        <button onClick={handleDeleteAccount} className="delete-account-button">
-          Delete Account
+        <button type="submit" className="submit-btn">
+          Save Changes
         </button>
-        <button onClick={close} className="close-button">
-          Close
-        </button>
-      </div>
-    );
-}
+      </form>
+    </div>
+  );
+};
 
-export default Profileedit;
+export default ProfileEdit;

@@ -42,7 +42,7 @@ function Profile() {
           </h3>
           <div className="profile-details">
             <p>
-              <span className="label">Name :</span> {user.full_name ? user.full_name : user.username}
+              <span className="label">Name :</span>{user.full_name}
             </p>
             <p>
               <span className="label">Email :</span> {user.email}
@@ -50,23 +50,15 @@ function Profile() {
             <p>
               <span className="label">Bio :</span> {user.bio}
             </p>
-            <p>
-              <span className="label">Age :</span> 35
-            </p>
-            <p>
-              <span className="label">Mobile :</span> +91 xxxxx xxxxx
-            </p>
-            <p>
-              <span className="label">Address :</span> 123 main St, anytown,
-              USA
-            </p>
           </div>
           <div style={{display:'inline'}}>
-          <img src={img2} alt="Github Logo" className="google-logo2"/>
-          <img src={img3} alt="Google Logo" className="google-logo2"/>
+            {/* <div onClick={()=>{window.location.href='https://github.com/Tusha '}}> */}
+          {/* <img src={img2} alt="Github Logo" className="google-logo2"/> */}
+            </div>
+          {/* <img src={img3} alt="Google Logo" className="google-logo2"/> */}
           </div>
           
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );

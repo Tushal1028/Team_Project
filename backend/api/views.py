@@ -66,6 +66,7 @@ class UserProfileView(generics.RetrieveAPIView):
     def get_object(self):
         return self.request.user.profile
 
+
 # def register(req):
 #     if req.method == 'POST':
 #         form = UserCreationForm(req.POST)
@@ -82,3 +83,23 @@ class UserProfileView(generics.RetrieveAPIView):
 
 # def logout(req):
 #     pass
+
+
+# chat gpt code
+class EditUserProfileView(generics.UpdateAPIView):
+    serializer_class = serializer.ProfileUpdateSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user.profile
+
+    def update(self, request, *args, **kwargs):
+        # Handle partial updates by passing partial=True to the serializer
+        partial = kwargs.pop('partial', True)  # Set to True for partial updates
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=partial)
+
+        if serializer.is_valid():
+            self.perform_update(serializer)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
